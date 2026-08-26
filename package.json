@@ -1,0 +1,21 @@
+{
+  "name": "seagull-sandbox-3d-v3-2-public-flock",
+  "version": "3.2.0",
+  "description": "Seagull Sandbox 3D V3.2 Public Flock - character customizer, effects, and deploy-ready multiplayer website",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "threejs",
+    "websocket",
+    "multiplayer",
+    "seagull",
+    "sandbox",
+    "game"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
+}

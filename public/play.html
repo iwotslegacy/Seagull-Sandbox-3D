@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"
+  />
+  <title>Play Seagull Sandbox 3D V3.1</title>
+  <link rel="stylesheet" href="/css/game-ui.css" />
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <a id="backHomeButton" href="/">← Home</a>
+  <button id="pauseButton" aria-label="Pause">⏸ Pause</button>
+
+  <div id="superPoopHud" aria-label="Super-Poop meter">
+    <div class="superLabel">
+      <span>SUPER-POOP</span>
+      <span id="superPoopPercent">0%</span>
+    </div>
+    <div class="superTrack">
+      <div id="superPoopFill"></div>
+    </div>
+  </div>
+
+  <div id="mobileControls">
+    <button id="upButton" class="altButton" aria-label="Fly upward">↑</button>
+
+    <div id="joystick" class="stickArea" aria-label="Movement joystick">
+      <div id="stickKnob" class="stickKnob"></div>
+    </div>
+
+    <button id="downButton" class="altButton" aria-label="Descend">↓</button>
+
+    <div class="actionStack">
+      <button id="eatButton">Eat</button>
+      <button id="interactButton">Interact</button>
+      <button id="poopButton">Poop</button>
+    </div>
+  </div>
+
+  <div id="pauseOverlay">
+    <div class="pauseCard">
+      <h1>Seagull Sandbox 3D</h1>
+      <p class="subtitle">
+        V3.2: lobby links, cleaner structure, bigger seeded town, and up to 12 multiplayer seagulls.
+      </p>
+
+      <div class="pauseGrid">
+        <button id="resumeButton" class="primary">Resume</button>
+        <button id="multiplayerButton">Multiplayer</button>
+        <button id="restartButton">Restart Bird</button>
+        <button id="newMapButton">New Map</button>
+        <button id="controlsButton">Controls</button>
+        <button id="customizeButton">Customize</button>
+        <button id="leaveRoomButton">Leave Room</button>
+      </div>
+
+      <div id="multiplayerPanel" class="panel">
+        <strong>Multiplayer</strong><br />
+        Create a room or join with a code. Your custom name/look is shared when you join.
+
+        <div class="multiRows" style="margin-top: 12px;">
+          <div class="multiRow">
+            <span>Make a new room with a 6–8 character code.</span>
+            <button id="createRoomButton">Create Room</button>
+          </div>
+
+          <div class="multiRow">
+            <input id="roomCodeInput" maxlength="8" placeholder="ROOM CODE" />
+            <button id="joinRoomButton">Join Room</button>
+          </div>
+
+          <div class="multiRow">
+            <span>Copy a shareable link after creating/joining a room.</span>
+            <button id="copyRoomLinkButton">Copy Room Link</button>
+          </div>
+        </div>
+
+        <div style="margin-top: 12px;">
+          <span class="statusPill" id="roomStatus">Singleplayer</span>
+          <span class="statusPill" id="roomCodeDisplay">No room</span>
+          <span class="statusPill" id="playerCountDisplay">1 seagull</span>
+        </div>
+      </div>
+
+      <div id="customizePanel" class="panel">
+        <strong>Customize your seagull</strong><br />
+        Changes apply instantly for you. Rejoin a room if you want everyone to see a brand-new style.
+
+        <div class="customizeRows" style="margin-top: 12px;">
+          <label>
+            <span>Name</span>
+            <input id="gamePlayerName" maxlength="18" placeholder="Captain Chips" />
+          </label>
+
+          <label>
+            <span>Accent color</span>
+            <input id="gameGullColor" type="color" value="#ffd166" />
+          </label>
+
+          <label>
+            <span>Style</span>
+            <select id="gameGullStyle">
+              <option value="classic">Classic</option>
+              <option value="punk">Punk crest</option>
+              <option value="captain">Captain</option>
+              <option value="bandit">Bandit</option>
+              <option value="fancy">Fancy</option>
+            </select>
+          </label>
+
+          <button id="applyCustomizerButton">Apply Look</button>
+        </div>
+      </div>
+
+      <div id="controlsPanel" class="panel">
+        <strong>Desktop</strong><br />
+        Click game: lock mouse<br />
+        Mouse: look around<br />
+        WASD / arrows: move where camera faces<br />
+        Space: take off / toggle up or down while flying<br />
+        Ctrl or C: descend while flying<br />
+        E: pick up or drop<br />
+        Left click: eat<br />
+        P: poop<br />
+        Esc / Pause: unlock mouse and pause<br /><br />
+
+        <strong>Mobile / iPad</strong><br />
+        Joystick: move<br />
+        Drag screen: look around<br />
+        ↑ / ↓: fly up or descend<br />
+        Eat: eat nearby or carried edible thing<br />
+        Interact: pick up or drop<br />
+        Poop: terrible power<br /><br />
+
+        <strong>Multiplayer</strong><br />
+        Create/join from this menu or from the homepage. Links like <code>/play.html?room=ABC123</code> auto-join.
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/js/game.js"></script>
+</body>
+</html>

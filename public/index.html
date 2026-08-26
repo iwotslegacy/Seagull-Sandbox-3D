@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seagull Sandbox 3D — Multiplayer Bird Chaos</title>
+  <meta name="description" content="Play as a chaotic seagull in a seaside sandbox. Create or join multiplayer rooms with up to 12 seagulls." />
+  <link rel="stylesheet" href="/css/site.css" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="navInner">
+      <a class="brand" href="/">
+        <span class="logoBird">🐦</span>
+        <span>Seagull Sandbox 3D</span>
+      </a>
+
+      <div class="navLinks">
+        <a href="#features">Features</a>
+        <a href="#multiplayer">Multiplayer</a>
+        <a href="#how">How to play</a>
+        <a class="btn btnPrimary" href="/play.html">Play Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="siteShell hero">
+      <div class="heroIntro">
+        <div class="heroCopyBlock">
+          <div class="kicker">V3.2 · Up to 12 seagulls</div>
+          <h1>Be a menace. <span>With friends.</span></h1>
+          <p>
+            Customize your gull, fly around a huge seeded seaside town, steal snacks,
+            fill the Super-Poop meter, and create multiplayer rooms for maximum bird nonsense.
+          </p>
+
+          <div class="heroActions">
+            <a class="btn btnPrimary" href="/play.html">Play Singleplayer</a>
+            <button class="btn btnBlue" data-create-room>Create Room</button>
+            <a class="btn" href="#multiplayer">Join Room</a>
+          </div>
+        </div>
+
+        <aside class="quickPlayCard">
+          <h2>Quick start</h2>
+          <p>
+            Name your bird, choose a look, then start solo or create a room.
+          </p>
+
+          <div class="customizerCard">
+            <label>
+              <span>Seagull name</span>
+              <input id="playerName" maxlength="18" placeholder="Captain Chips" autocomplete="off" />
+            </label>
+
+            <div class="customizerGrid">
+              <label>
+                <span>Accent color</span>
+                <input id="gullColor" type="color" value="#ffd166" />
+              </label>
+
+              <label>
+                <span>Style</span>
+                <select id="gullStyle">
+                  <option value="classic">Classic</option>
+                  <option value="punk">Punk crest</option>
+                  <option value="captain">Captain</option>
+                  <option value="bandit">Bandit</option>
+                  <option value="fancy">Fancy</option>
+                </select>
+              </label>
+            </div>
+          </div>
+
+          <div class="quickActions">
+            <a class="btn btnPrimary" href="/play.html">Play</a>
+            <button class="btn btnBlue" data-create-room>Create Room</button>
+
+            <div class="quickJoin">
+              <input id="roomCode" maxlength="8" placeholder="ROOM CODE" autocomplete="off" />
+              <button id="joinRoomButton" class="btn">Join</button>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="heroShowcase">
+        <div class="heroCard" aria-label="Stylized seagull game artwork">
+          <div class="heroSky"></div>
+          <div class="heroBoardwalk"></div>
+          <div class="heroSea"></div>
+
+          <div class="bigBird">
+            <div class="body"></div>
+            <div class="wing"></div>
+            <div class="head"></div>
+            <div class="eye"></div>
+            <div class="beak"></div>
+          </div>
+
+          <div class="floatTag one">Room codes 🔐</div>
+          <div class="floatTag two">Super-Poop 💥</div>
+          <div class="floatTag three">12 gulls online 🐦</div>
+        </div>
+
+        <div class="showcaseNotes">
+          <div class="noteCard">
+            <strong>Multiplayer rooms</strong>
+            <span>Create a 6–8 character code and invite up to 11 other gulls.</span>
+          </div>
+
+          <div class="noteCard">
+            <strong>Seeded seaside map</strong>
+            <span>Everyone in the room shares the same generated town.</span>
+          </div>
+
+          <div class="noteCard">
+            <strong>Actual bird nonsense</strong>
+            <span>Fly, steal, eat, drop things, poop, and generally be a problem.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="siteShell section">
+      <div class="sectionHeader">
+        <h2>Seaside sandbox chaos</h2>
+        <p>No score. No stamina. No dignity. Just open-world bird behavior in a bigger generated town.</p>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Customize</h3>
+          <p>Name your gull, pick an accent color, and choose a style before joining friends.</p>
+        </article>
+
+        <article class="card">
+          <h3>Open map</h3>
+          <p>Explore beaches, roads, piers, shops, rooftops, parks, benches, cafes, and random props.</p>
+        </article>
+
+        <article class="card">
+          <h3>Pick stuff up</h3>
+          <p>Grab food, phones, bottles, shells, sunglasses, burgers, fries, pizza, and more.</p>
+        </article>
+
+        <article class="card">
+          <h3>Super-Poop</h3>
+          <p>Eat food to fill the meter. At 100%, your next poop becomes a small environmental incident.</p>
+        </article>
+
+        <article class="card">
+          <h3>Seeded towns</h3>
+          <p>Room hosts share the same generated town seed, so everyone sees the same seaside playground.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="multiplayer" class="siteShell section">
+      <div class="sectionHeader">
+        <h2>Join the flock</h2>
+        <p>Create a room and share the code, or join a friend’s room directly from here.</p>
+      </div>
+
+      <div class="homeLobbyCard">
+        <div class="joinForm">
+          <input id="roomCodeSecondary" maxlength="8" placeholder="ROOM CODE" autocomplete="off" />
+          <button id="joinRoomButtonSecondary" class="btn btnBlue">Join Room</button>
+          <button class="btn btnPrimary" data-create-room>Create Room</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="siteShell section">
+      <div class="sectionHeader">
+        <h2>How to play</h2>
+        <p>Desktop and mobile controls are both supported. Mouse lock works on PC; drag-look works on touch devices.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div>
+            <strong>Run the server.</strong><br />
+            Open the project in VS Code and run <code>npm start</code>.
+          </div>
+        </div>
+
+        <div class="step">
+          <div>
+            <strong>Open the site.</strong><br />
+            Visit <code>http://localhost:3000</code>. For another device, use your computer’s local IP address.
+          </div>
+        </div>
+
+        <div class="step">
+          <div>
+            <strong>Create or join.</strong><br />
+            Use the website lobby or pause menu. Share the room code with other players.
+          </div>
+        </div>
+
+        <div class="step">
+          <div>
+            <strong>Mess around.</strong><br />
+            WASD to move, mouse to look, E to grab/drop, left click to eat, P to poop.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer siteShell">
+    Built for deeply unserious bird crimes. 🐦
+  </footer>
+
+  <script src="/js/site.js"></script>
+</body>
+</html>
